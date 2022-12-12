@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class MonsterSystem : MonoBehaviour
 {
     public GameObject player;
+    public GameObject canvas;
     public Animator animator;
     private int state = 0;
     public bool isKilling = false;
@@ -34,7 +35,7 @@ public class MonsterSystem : MonoBehaviour
         animator.SetInteger("State",state);
     }
     void KillPlayer(){
-        Debug.Log("GameOver");
+       canvas.GetComponent<CanvasManager>().GameOver();
     }
 
 }
